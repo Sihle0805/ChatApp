@@ -50,5 +50,17 @@ public class Login {
     public boolean checkUserName() {
         return checkUserName(this.username);
     }
+/**
+     * Checks that a given username contains an underscore AND is no more than
+     * five characters long. Called from Main during input collection so that
+     * a full Login object does not need to be constructed first.
+     *
+     * @param input the username string to validate
+     * @return true if both conditions are met, false otherwise
+     */
+    public boolean checkUserName(String input) {
+        if (input == null) return false;
+        return input.contains("_") && input.length() <= 5;
+    }
 
     
